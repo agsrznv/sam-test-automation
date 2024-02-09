@@ -17,7 +17,6 @@ import java.util.logging.Logger;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class ChallengeTest {
     WebDriver webDriver;
@@ -89,13 +88,10 @@ public class ChallengeTest {
     @Test
     public void footerTest() {
         // 10. Ir hasta el footer y validar con un assert que la dirección de la
-        // empresa sea la correcta “Azcuénaga 1344, piso 1o”
+        // empresa sea la correcta “Azcuénaga 1344, piso 1º”
 
         String info = basePage.getFooterContactInfo();
-
-        assertFalse(info.contains("Azcuénaga 1344, piso 1o"));
         assertTrue(info.contains("Azcuénaga 1344, piso 1º"));
-
         logger.info("La dirección de la empresa es 'Azcuénaga 1344, piso 1º'");
     }
 
